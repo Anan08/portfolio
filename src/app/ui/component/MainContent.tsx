@@ -1,6 +1,7 @@
-import React from 'react'
-import { Content } from '../content'
+import React from 'react';
+import { Content } from '../content';
 import Spline from '@splinetool/react-spline/next';
+import { Key } from 'lucide-react';
 
 //use Object.entries(Tech).map() to  extract the data in Tech object
 export default function MainContent() {
@@ -14,7 +15,7 @@ export default function MainContent() {
           <p className='text-base md:text-lg text-gray-700 text-wrap text-justify'> {Content.AboutMe.desc} </p>
         </div>
         <div  className='w-full flex flex-col'>
-          {Content.Project.list.map((item) => {
+          {Content.Project.list.map((item, index) => {
             return(
               <div className='mb-5'> 
                 <p className='text-base md:text-lg text-black text-wrap text-justify font-extrabold'> {item.desc} </p>
