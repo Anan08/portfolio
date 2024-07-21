@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { inter } from './ui/fonts';
+import './globals.css'
+import Header from "./ui/component/Header";
+import { Suspense } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${(inter.className)} p-5 `}>
+      <Header/>
+      <Suspense fallback='Loading...'>
+        <div>
+          {children}
+        </div>
+      </Suspense>
+      </body>
     </html>
   );
 }
