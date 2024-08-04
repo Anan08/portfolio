@@ -1,54 +1,65 @@
 import { Dock, DockIcon, HomeIcon, MailIcon, LinkedinIcon } from 'lucide-react'
 import React from 'react'
+import { EmailIcon, GithubIcon, InstagramIcon, LinkedInIcon, XIcon } from '../icons'
+import Link from 'next/link'
+import { poppins } from '../fonts'
 
 
 
-export type IconProps = React.HTMLAttributes<SVGElement>;
-
-const Icons = {
-    email : (props : IconProps) => <MailIcon {...props} />,
-    linkedIn : (props : IconProps) => <LinkedinIcon {...props}/>
-
-}
 
 const DATA = {
     contact : {
-        social : {
-            Github : {
+        social : [
+            {
                 name : "Github",
                 url : "https://github.com/Anan08",
-                icon : "Github"
+                icon : <GithubIcon className=''/>
             },
-            LinkedIn : {
+            {
                 name : "LinkedIn",
                 url : "https://www.linkedin.com/in/ananda-putra-3a7702237/",
-                icon : "LinkedIn"
+                icon : <LinkedInIcon/>
             },
-            Instagram : {
+            {
                 name : "Instagram",
                 url : "https://www.instagram.com/ossee_s/",
-                icon : "Instagram"
+                icon : <InstagramIcon/>
             },
-            X : {
+            {
                 name : "X",
                 url : "https://x.com/Orbseer",
-                icon : "X"
+                icon : <XIcon/>
             },
-            Email : {
+            {
                 name : "Email",
-                url : "/",
-                icon : "Email"
+                url : "mailto:anandapgt@gmail.com",
+                icon : <EmailIcon/>
             }
-        }
+        ]
     }
 }
 
 export default function Footer() {
   return (
-    <div className='relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl'>
-        <Dock direction='middle'>
+    <>
+    <h1 className={`${poppins.className } flex justify-center items-center`}>More About me</h1>
+    <div className='flex flex-col h-10 w-full items-center sticky bottom-0 bg-white justify-center hover:overflow-visible overflow-hidden hover:cursor-pointer '>
+        <div className='flex flex-row justify-evenly items-center gap-5 w-full p-2 mb-12'>
+                {DATA.contact.social.map((item) => {
+                    return (
+                        <>
+                        <Link
+                        href={item.url}
+                        key={item.name}>
+                            <h1 className='w-5 h-5 hover:cursor-pointer hover:translate-y-[-10px]' key={item.name}> {item.icon} </h1>
+                        </Link>
+                                
+                        </>
+                    )
+                })}
 
-        </Dock>
-    </div>
+            </div>
+        </div>
+    </>
   )
 }

@@ -19,22 +19,22 @@ export const Content = {
         {
           title : '',
           link : '/',
-          desc : 'Click Me!'
+          desc : ''
         }, 
         {
           title : '',
           link : '',
-          desc : 'Click Me!'
+          desc : ''
         }, 
         {
           title : '',
           link : '',
-          desc : 'Click Me!'
+          desc : ''
         },
         {
           title : '',
           link : '',
-          desc : 'Click Me!'
+          desc : ''
         }
   
       ]

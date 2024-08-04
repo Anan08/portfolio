@@ -12,8 +12,7 @@ function Header() {
             <Link
             href='/'
             className='flex flex-row space-x-2 justify-between hover:bg-black hover:text-white rounded-md p-1'>
-                <CameraIcon className='h-6 w-6 '/>
-                <h1 className={`${(poppins.className)} font-bold`}>Ananda'<span className='text-orange-400'>s</span></h1>
+                <h1 className={`${(poppins.className)} font-bold text-xl`}>Ananda'<span className='text-orange-400'>s</span></h1>
             </Link>
             
         </div>

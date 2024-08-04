@@ -22,7 +22,7 @@ const links = [
     },
     {
         name:'Contact',
-        href:'/contact',
+        href:'mailto:anandapgt@gmail.com',
         icon:EnvelopeIcon
     }
 ]
@@ -40,7 +40,9 @@ export default function NavLinks(className : any) {
                     href={link.href}
                     className='flex flex-row justify-between space-x-1 hover:bg-black hover:text-white rounded-md p-1 '
                     >
-                        <LinkIcon className='w-4'/>
+                        <LinkIcon 
+                        key={link.name}
+                        className='w-4'/>
                         <p className='hidden md:block'>{link.name}</p>
                     </Link>
                 )
